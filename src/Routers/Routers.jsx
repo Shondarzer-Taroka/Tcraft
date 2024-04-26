@@ -38,8 +38,9 @@ import Update from "../Components/Update/Update";
                     element:<Restrict><MyCraftAndList></MyCraftAndList></Restrict>
                 },
                 {
-                    path:'/update',
-                    element:<Update></Update>
+                    path:'/update/:id',
+                    element:<Restrict><Update></Update></Restrict>,
+                    loader:({params})=> fetch(`http://localhost:4545/crafts/${params.id}`)
                 }
             ]
                 

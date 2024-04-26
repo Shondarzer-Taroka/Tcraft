@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
 
 const Update = () => {
 
-    let {user}=useContext(AuthContext)
+    let {user}=useContext(AuthContext);
+    let data=useLoaderData()
+    let {image,item_name,subcategory_Name,price,rating,customization,processing_time,stockStatus,_id}=data
+    console.log(data);
     function update(e) {
         e.preventDefault()
         let form=e.target 
@@ -18,6 +22,18 @@ const Update = () => {
         let stockStatus=form.stockStatus.value
         let craft={image,item_name,subcategory_Name,price,rating,customization,processing_time,stockStatus}
         console.log(craft);
+        
+        fetch(`http://localhost:4545/crafts/${_id}`,{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(craft)
+        })
+        .then(res=> res.json())
+        .then(data=>{
+            console.log(data);
+        })
 
 
     }
@@ -35,7 +51,7 @@ const Update = () => {
                         <input className=" p-2 w-[100%] outline-none " type="text" name="image" placeholder="Type your photo URL" id="" />
                     </div>
                     <div className="flex items-center border-[1px] border-black rounded-lg p-1" >
-                        <span>Item Name:</span>2
+                        <span>Item Name:</span>
                         <input className=" p-2 w-[100%] outline-none " type="text" name="item_name" placeholder="Type your Item Name" id="" />
                     </div>
                     <div className="flex items-center border-[1px] border-black rounded-lg p-1" >
