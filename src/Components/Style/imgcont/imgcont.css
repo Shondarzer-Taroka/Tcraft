@@ -1,0 +1,8 @@
+
+#namebtn{
+    transition: all .5s;
+}
+
+#img-contaner:hover #namebtn{
+    display: block;
+}
