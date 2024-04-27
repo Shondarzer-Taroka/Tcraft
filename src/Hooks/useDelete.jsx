@@ -7,15 +7,18 @@ const useDelete = () => {
     let [items,setItems]=useState([])
     let [item,setitem]=useState(items)
     let [toggle,setToggle]=useState(false)
-        console.log(toggle);
-        let i=1
+    let [loading, setLoading] = useState(true)
+        // console.log(toggle);
+       
       useEffect(()=>{
+      
         fetch('http://localhost:4545/crafts')
         .then(res=> res.json())
         .then(data=>{
             setItems(data)
+   
         })
-    },[])
+    },[toggle,items])
 
     function handleDelete(id) {
         
@@ -49,7 +52,7 @@ const useDelete = () => {
         //   setToggle(!toggle)
   
     }
-    return { setToggle,setItems,item,items,toggle,handleDelete}
+    return { setToggle,setItems,item,items,toggle,handleDelete,loading}
  
 };
 

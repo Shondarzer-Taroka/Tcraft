@@ -1,43 +1,98 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { TiTick } from "react-icons/ti";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { ColorRing } from "react-loader-spinner";
 import useDelete from "../../Hooks/useDelete";
+import Swal from "sweetalert2";
 const MyCraftAndList = () => {
     let result=useRef()
    let { user, } = useContext(AuthContext)
-   let [getUser, setgetUser] = useState([])
-   let [loading, setLoading] = useState(true)
-   let { handleDelete, toggle, setToggle, items } = useDelete()
-   let [c,d]=useState()
-   // let [myUser,setMyUSer]=useState(getUser)
-   console.log(items);
-   useEffect(() => {
-      setLoading(true)
-      fetch('http://localhost:4545/crafts')
-         .then(res => res.json())
-         .then(data => {
-            setgetUser(data)
-            setLoading(false)
-            //    setSpinner(false)
-         })
-   }, [])
-
-   // let sorted
+   let { handleDelete, items ,loading} = useDelete()
+   let lodedData= useLoaderData()
+   // console.log(lodedData);
+   // let [getUser, setgetUser] = useState()
    // console.log(getUser);
-   // console.log(sorted);
-   let myUser = items.filter(value => value.email == user.email)
-   // d([...myUser])
-   // console.log(c);
-   // setSort(myUser)
+   // let [modifiedItem,setModifiedItem]=useState()
+   // let [loading, setLoading] = useState(true)
+   // let [toggle,setToggle]=useState(false)
+   let [c,d]=useState()
+   
+   // useEffect(() => {
+   //    setLoading(true)
+   //    fetch('http://localhost:4545/crafts')
+   //       .then(res => res.json())
+   //       .then(data => {
+   //          setgetUser(data)
+   //          setLoading(false)
+   //          //    setSpinner(false)
+   //       })
+   // }, [getUser])
+
+
+   // function deleteDataFromDatabase(id) {
+   //    fetch(`http://localhost:4545/crafts/${id}`,{
+   //       method:'DELETE'
+   //    })
+   //    .then(res=> res.json())
+   //    .then(data=>{
+   //       let remainingData= getUser.filter(value=> value._id !== id)
+   //       console.log(data);
+   //       console.log(data);
+   //       // setToggle(!toggle)
+   //    })
+   // }
+
+   // function deleteDataFromDatabase(id) {
+   //  console.log(id);
+   //      Swal.fire({
+   //          title: "Are you sure?",
+   //          text: "You won't be able to revert this!",
+   //          icon: "warning",
+   //          showCancelButton: true,
+   //          confirmButtonColor: "#3085d6",
+   //          cancelButtonColor: "#d33",
+   //          confirmButtonText: "Yes, delete it!"
+   //        })
+   //        .then(result=>{
+   //          if ( result.isConfirmed) {
+   //              fetch(`http://localhost:4545/crafts/${id}`,{
+   //                  method:'DELETE'
+   //              })
+   //              .then(res=> {
+
+   //               res.json() 
+   //               console.log('kk');
+   //              } )
+   //              .then(data=> {
+   //                  let remaining=getUser.filter(value=> value._id!==id)
+   //                  console.log(data);
+   //                  console.log(remaining);
+   //                  if (data.deletedCount > 0) {
+
+   //                      Swal.fire({
+   //                        title: "Deleted!",
+   //                        text: "Your file has been deleted.",
+   //                        icon: "success"
+   //                      });
+   //                  }
+   //              })
+   //          }
+   //        })
+
+   // }
+   // console.log(modifiedItem);
+
+
+   let myUser = items?.filter(value => value.email == user.email)
+   // console.log(myUser);
    function handleSort() {
        let sorted=myUser.sort((a,b)=> {
          return a.customization.length-b.customization.length
       })
 
       d(sorted)
-      console.log(sorted);
+      // console.log(sorted);
       // setSortCraft(sorted)
       // setSort('sorted')
     
@@ -54,19 +109,23 @@ const MyCraftAndList = () => {
     
    }
 
+
+
  
 
    return (
-      loading ? <div className="flex justify-center">  <div className="">
-         <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="color-ring-loading"
-            wrapperStyle={{}}
-            wrapperClass="color-ring-wrapper"
-            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-         /></div></div> : <div className="space-y-32">
+      // loading ? <div className="flex justify-center">  <div className="">
+      //    <ColorRing
+      //       visible={true}
+      //       height="80"
+      //       width="80"
+      //       ariaLabel="color-ring-loading"
+      //       wrapperStyle={{}}
+      //       wrapperClass="color-ring-wrapper"
+      //       colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+      //    /></div></div> :
+         
+         <div className="space-y-32">
 
          <div className="dropdown">
             <div tabIndex={0} role="button" className="btn m-1">Click</div>

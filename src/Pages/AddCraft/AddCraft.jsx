@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddCraft = () => {
     let {user}=useContext(AuthContext)
@@ -29,6 +30,7 @@ const AddCraft = () => {
         })
         .then(res=> res.json())
         .then(data=>{
+            toast.success('successfully added')
             console.log(data);
         })
 
@@ -154,7 +156,7 @@ const AddCraft = () => {
                 </aside>
                 <input  className="btn btn-primary" type="submit" value={'Add'}/>
             </form>
-
+    <ToastContainer></ToastContainer>
         </div>
     );
 };

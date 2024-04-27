@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Update = () => {
 
     let {user}=useContext(AuthContext);
     let data=useLoaderData()
-    let {image,item_name,subcategory_Name,price,rating,customization,processing_time,stockStatus,_id}=data
+    let {_id}=data
     console.log(data);
     function update(e) {
         e.preventDefault()
@@ -32,6 +34,7 @@ const Update = () => {
         })
         .then(res=> res.json())
         .then(data=>{
+            toast.success('successfully updated')
             console.log(data);
         })
 
@@ -103,6 +106,7 @@ const Update = () => {
                 </section>
                <input type="submit" value={'Update'} className="btn btn-primary w-full mt-3" name="" id="" />
             </form>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

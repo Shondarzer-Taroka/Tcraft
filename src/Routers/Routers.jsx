@@ -35,6 +35,7 @@ import Update from "../Components/Update/Update";
                 },
                 {
                     path:'/mycraft',
+                    loader:()=> fetch(`http://localhost:4545/crafts`),
                     element:<Restrict><MyCraftAndList></MyCraftAndList></Restrict>
                 },
                 {
