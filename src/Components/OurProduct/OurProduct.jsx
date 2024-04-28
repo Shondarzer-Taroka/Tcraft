@@ -1,4 +1,4 @@
-
+import { Typewriter } from 'react-simple-typewriter'
 import wood1 from '../../assets/wood1.jpg'
 import wood2 from '../../assets/wood2.jpg'
 import wood3 from '../../assets/wood3.jpg'
@@ -6,7 +6,23 @@ import wood4 from '../../assets/wood4.jpg'
 import '../Style/effect/effect.css'
 const OurProduct = () => {
     return (
-        <> 
+        <>
+        {/* <h3>
+  <Typewriter
+    cursor
+    cursorBlinking
+    delaySpeed={1000}
+    deleteSpeed={25}
+    loop={0}
+    typeSpeed={75}
+    words={[
+      'Hello World',
+      'Welcome to',
+      'React Simple Typewriter',
+      'A Simple React Component/Hook for adding a nice Typewriter effect to your project.'
+    ]}
+  />
+</h3> */}
         <h1 className='text-center text-4xl font-bold my-7'>Our Wooden Furniture </h1>
         <section className='grid grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-5 text-white'>
 

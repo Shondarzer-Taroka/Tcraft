@@ -2,14 +2,15 @@ import img1 from '../../src/assets/eth.png'
 import img2 from '../../src/assets/5yh.png'
 import img3 from '../../src/assets/geometric.png'
 import img4 from '../../src/assets/rntrbr.png'
+import { Fade } from "react-awesome-reveal";
 const OurServices = () => {
     return (
-        <div className='bg'>
+        <div className=''>
             
-            <h1 className="text-center font-poppins font-semibold text-3xl mt-8"> OUR SERVICES</h1>
+            <Fade direction='up'>  <h1 className="text-center font-poppins font-semibold text-3xl mt-8"> OUR SERVICES</h1></Fade>
             <p className="mb-3 text-center"> Whether you’re a designer looking for a trusted partner or a fashion enthusiast seeking the latest trends, we’ve got you covered.</p>
              
-             <div id="container" className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
+             <div id="container" className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#3fa5f87e]'>
                     
                     <div id="card" className='flex gap-4 flex-col items-start border-[1px] border-black p-4'>
                      <div>

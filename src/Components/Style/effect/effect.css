@@ -24,3 +24,20 @@
     background-color: rgba(6, 14, 14, 0.144);
     /* color: aqua; */
 }
+
+#shadowing{
+    transition: all .5s;
+}
+
+#shadowing:hover{
+    box-shadow: 1px 4px 13px -2px rgba(148,135,135,0.74);
+}
+
+#imgeffect{
+    transition: all .5s; 
+}
+
+#doet:hover #imgeffect{
+    transform: scale(1.2);
+}
+

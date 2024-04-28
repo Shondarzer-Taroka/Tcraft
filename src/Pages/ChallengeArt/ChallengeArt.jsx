@@ -1,25 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 import img1 from '../../assets/banner1.png'
-import '../../Components/Style/effect/effect.css'
-const CraftItems = () => {
-   let {user,loading}=useContext(AuthContext)
-     let [userAddeddata,setUserAddedData]=useState([])
-    useEffect(()=>{
-        fetch('http://localhost:4545/craftitems')
-        .then(res=>res.json())
-        .then(data=>{
-        // setUserAddedData(data)
-        console.log(data);
-
-        })
-    },[])
+const ChallengeArt = () => {
     return (
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-         
-         <aside className="border-[1px]  rounded-lg" id="shadowing">
+        <div>
 
-            <div id="doet" className="p-3 ">
+<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+         
+         <aside className="border-[1px]  rounded-lg" id="prominent">
+
+            <div id="" className="p-3 ">
                 <div className="w-full overflow-hidden rounded-lg">
                        <img className="w-full rounded-lg" id="imgeffect" src={img1} alt="" />
                 </div>
@@ -42,7 +31,9 @@ const CraftItems = () => {
 
            
         </section>
+            
+        </div>
     );
 };
 
-export default CraftItems;
+export default ChallengeArt;
