@@ -1,46 +1,58 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
 import img1 from '../../assets/banner1.png'
 import '../../Components/Style/effect/effect.css'
+import { Link } from "react-router-dom";
 const CraftItems = () => {
-   let {user,loading}=useContext(AuthContext)
-     let [userAddeddata,setUserAddedData]=useState([])
-    useEffect(()=>{
-        fetch('http://localhost:4545/craftitems')
-        .then(res=>res.json())
-        .then(data=>{
-        // setUserAddedData(data)
-        console.log(data);
 
-        })
-    },[])
+    let [userAddeddata, setUserAddedData] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:4545/allcraft')
+            .then(res => res.json())
+            .then(data => {
+                setUserAddedData(data)
+                // console.log(userAddeddata);
+
+            })
+    }, [])
     return (
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-         
-         <aside className="border-[1px]  rounded-lg" id="shadowing">
+        <section className="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-            <div id="doet" className="p-3 ">
-                <div className="w-full overflow-hidden rounded-lg">
-                       <img className="w-full rounded-lg" id="imgeffect" src={img1} alt="" />
-                </div>
-             
-            </div>
+            {
+                userAddeddata.map((value) => {
+                    return (
+                        <>
+                            <aside className="border-[1px]  rounded-lg" id="shadowing">
 
-            <div id="content" className="px-3 pt-1">
-             <h1 className="font-bold text-3xl"> item name </h1>
-             <h3 className="font-semibold"> Subcategory Name </h3>
-             <p>price: $77</p>
-             <p>In stock</p>
-             <p> Trocessing time: </p>
-            </div>
+                                <div id="doet" className="p-3 ">
+                                    <div className="w-full h-[300px] overflow-hidden rounded-lg">
+                                        <img className="w-full h-full object-cover rounded-lg" id="imgeffect" src={value.image} alt="" />
+                                    </div>
 
-            <div className="p-3">
-                <button className="btn btn-info text-white">View details</button>
-            </div>
+                                </div>
 
-         </aside>
+                                <div id="content" className="px-3 pt-1">
+                                    <h1 className="font-bold text-3xl">{value?.item_name} </h1>
+                                    <h3 className="font-semibold my-2"> {value?.subcategory_Name}</h3>
+                                    <p> <span className="font-semibold">price:</span>  ${value?.price}</p>
+                                    <p> <span className="font-semibold">Stock status:</span> {value?.stockStatus}</p>
+                                    <p> <span className="font-semibold">Processing time:</span>  {value?.processing_time} </p>
+                                </div>
 
-           
+                                <div className="p-3">
+                                    <Link to={`/viewdetails/${value._id}`}>  <button className="btn btn-info text-white">View details</button></Link>
+                                  
+                                </div>
+
+                            </aside>
+                        </>
+
+                    )
+                })
+            }
+
+
+
+
         </section>
     );
 };

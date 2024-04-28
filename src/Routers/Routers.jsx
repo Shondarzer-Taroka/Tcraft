@@ -11,6 +11,7 @@ import Update from "../Components/Update/Update";
 import ViewDetails from "../Pages/VeiwDetails/ViewDetails";
 import AllArtAndCraft from "../Pages/AllArtAndCraft/AllArtAndCraft";
 import MyList from "../Components/MyList/MyList";
+import ViewSubcategory from "../Components/ViewSubcategory/ViewSubcategory";
 
 
 
@@ -39,7 +40,7 @@ import MyList from "../Components/MyList/MyList";
                 },
                 {
                     path:'/allcraft',
-                    // loader:()=> fetch('http://localhost:4545/crafts'),
+                    loader:()=> fetch('http://localhost:4545/crafts'),
                     element:<AllArtAndCraft></AllArtAndCraft>
                 },
                 {
@@ -55,6 +56,10 @@ import MyList from "../Components/MyList/MyList";
                     path:'/update/:id',
                     element:<Restrict><Update></Update></Restrict>,
                     loader:({params})=> fetch(`http://localhost:4545/crafts/${params.id}`)
+                },
+                {
+                    path:'/viewsub/:subname',
+                    element:<ViewSubcategory></ViewSubcategory>
                 }
             ]
                 

@@ -1,11 +1,30 @@
+// import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const ViewDetails = () => {
-    let loadedData = useLoaderData()
-    let { customization, item_name, price, processing_time, rating, stockStatus, subcategory_Name, image, short_description,user_name,email} = loadedData
-    console.log(loadedData);
+    let {id}= useParams()
+    // let loadedData = useLoaderData()
+    // console.log(loadedData);
+     let [getViewDetails,setGetViewDtails]=useState([])
+    console.log(id);
+    let { customization, item_name, price, processing_time, rating, stockStatus, subcategory_Name, image, short_description,user_name,email} = getViewDetails
+    console.log(getViewDetails);
+   
 
+  
+
+    useEffect(()=>{
+        fetch(`http://localhost:4545/viewdetails/${id}`)
+        .then(res=> res.json())
+        .then(data=>{
+            // console.log(data);
+            setGetViewDtails(data)
+            // console.log(loadedData);
+        })
+    },[id])
+//   console.log(getViewDetails)
+//   console.log(data);
     // let [craftData,setCraftData]=useState([])
     // console.log(loadedData);
 
@@ -20,6 +39,8 @@ const ViewDetails = () => {
     return (
         <div>
 
+ 
+   <h1 className="text-center font-bold text-4xl my-7"> View details</h1>
 
             <aside className="grid md:grid-cols-2 gap-3 ">
                 <div className="flex flex-col ">
@@ -96,6 +117,7 @@ const ViewDetails = () => {
             </aside>
 
         </div>
+    
     );
 };
 

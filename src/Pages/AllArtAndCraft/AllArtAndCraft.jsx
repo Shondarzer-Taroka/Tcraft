@@ -4,7 +4,17 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { data } from 'autoprefixer';
 
 const AllArtAndCraft = () => {
-    let loadedData = useLoaderData()
+    let loadedData=useLoaderData()
+    // console.log(lod);
+    // console.log();
+//   let [loadedData,setLoadedData]=useState([])
+    // useEffect(()=>{
+    //     fetch('http://localhost:5173/allcraft')
+    //     .then(res=> res.json())
+    //     .then(data=> {
+    //         console.log(data);
+    //     })
+    // },[])
 
     return (
         <div className="overflow-x-auto">

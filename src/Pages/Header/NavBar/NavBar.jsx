@@ -91,9 +91,12 @@ const NavBar = () => {
 </div> 
 
 
-<div id="namebtn" className="w-[150px] h-[max-content] p-4 border-2 absolute left-[-100px] z-50 hidden">
-  <p className="font-semibold"> {user?.displayName} </p>
+<div id="namebtn" className="w-[150px]  border-2 absolute left-[-100px] z-50">
+  <div className="flex items-center">
+      <p className="font-semibold"> {user?.displayName} </p>
   <button onClick={logUtFromFireBase} className="btn btn-info mt-4">Log Out</button>
+  </div>
+
 </div>
 </div>
 
