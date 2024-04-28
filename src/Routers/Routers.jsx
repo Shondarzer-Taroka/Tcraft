@@ -8,6 +8,9 @@ import Restrict from "../PrivateRoute/Restrict/Restrict";
 import MyCraftAndList from "../Pages/MyCraftAndList/MyCraftAndList";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Update from "../Components/Update/Update";
+import ViewDetails from "../Pages/VeiwDetails/ViewDetails";
+import AllArtAndCraft from "../Pages/AllArtAndCraft/AllArtAndCraft";
+import MyList from "../Components/MyList/MyList";
 
 
 
@@ -30,13 +33,23 @@ import Update from "../Components/Update/Update";
                     element:<Register></Register>
                 },
                 {
+                    path:'/viewdetails/:id',
+                    loader:({params})=> fetch(`http://localhost:4545/crafts/${params.id}`),
+                    element:<Restrict> <ViewDetails></ViewDetails> </Restrict>
+                },
+                {
+                    path:'/allcraft',
+                    // loader:()=> fetch('http://localhost:4545/crafts'),
+                    element:<AllArtAndCraft></AllArtAndCraft>
+                },
+                {
                     path:'/addcraft',
                     element:<Restrict><AddCraft></AddCraft></Restrict>
                 },
                 {
                     path:'/mycraft',
                     loader:()=> fetch(`http://localhost:4545/crafts`),
-                    element:<Restrict><MyCraftAndList></MyCraftAndList></Restrict>
+                    element:<Restrict><MyList></MyList></Restrict>
                 },
                 {
                     path:'/update/:id',

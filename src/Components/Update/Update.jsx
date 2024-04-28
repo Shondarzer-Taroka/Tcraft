@@ -1,16 +1,18 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const Update = () => {
 
-    let {user}=useContext(AuthContext);
-    let data=useLoaderData()
-    let {_id}=data
-    console.log(data);
+    // let {user}=useContext(AuthContext);
+   let {id}= useParams()
+   console.log(id);
+    // let data=useLoaderData()
+    // let {_id}=data
+    // console.log(data);
     function update(e) {
         e.preventDefault()
         let form=e.target 
@@ -25,7 +27,7 @@ const Update = () => {
         let craft={image,item_name,subcategory_Name,price,rating,customization,processing_time,stockStatus}
         console.log(craft);
         
-        fetch(`http://localhost:4545/crafts/${_id}`,{
+        fetch(`http://localhost:4545/update/${id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
@@ -35,6 +37,7 @@ const Update = () => {
         .then(res=> res.json())
         .then(data=>{
             toast.success('successfully updated')
+            form.reset()
             console.log(data);
         })
 

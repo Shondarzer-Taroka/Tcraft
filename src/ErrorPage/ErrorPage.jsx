@@ -1,6 +1,7 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
+import { useNavigate } from 'react-router-dom';
+import errorPage from '../../src/assets/notfo.png'
+import '../../src/Components/Style/imgcont/imgcont.css'
 const ErrorPage = () => {
     let navigate = useNavigate()
 
@@ -11,12 +12,20 @@ const ErrorPage = () => {
         navigate('/')
     }
     return (
-        <div>
+        <div className='flex items-center justify-center'>
+
             <div className='flex justify-center items-center flex-col h-[400px]'>
                 <div className=''>
-                    <h1 className='text-[80px] font-bold font-poppins text-center'>404</h1>
-                    <button className='btn btn-info mr-2' onClick={goBack}>Go Back</button>
+
+                <div>
+                <img className='md:w-[400px]' id='customImg' src={errorPage} alt="" />
+            </div>
+                    {/* <h1 className='text-[80px] font-bold font-poppins text-center'>404</h1> */}
+                    <div className='flex text-center justify-center mt-3'>
+                                       <button className='btn btn-info mr-2' onClick={goBack}>Go Back</button>
                     <button className='btn btn-info' onClick={goHome}>Home</button>
+                    </div>
+     
                 </div>
 
             </div>

@@ -5,12 +5,15 @@ import { Link, useLoaderData } from "react-router-dom";
 import { ColorRing } from "react-loader-spinner";
 import useDelete from "../../Hooks/useDelete";
 import Swal from "sweetalert2";
+import { data } from "autoprefixer";
 const MyCraftAndList = () => {
     let result=useRef()
    let { user, } = useContext(AuthContext)
-   let { handleDelete, items ,loading} = useDelete()
-   let lodedData= useLoaderData()
-   // console.log(lodedData);
+   let { handleDelete,} = useDelete()
+   let loadedData= useLoaderData()
+   let [cloneLoadedData,setCloneLoadedData]=useState(loadedData)
+   // console.log(15);
+   // console.log(loadedData);
    // let [getUser, setgetUser] = useState()
    // console.log(getUser);
    // let [modifiedItem,setModifiedItem]=useState()
@@ -29,6 +32,7 @@ const MyCraftAndList = () => {
    //       })
    // }, [getUser])
 
+   // console.log('k');
 
    // function deleteDataFromDatabase(id) {
    //    fetch(`http://localhost:4545/crafts/${id}`,{
@@ -83,20 +87,24 @@ const MyCraftAndList = () => {
    // }
    // console.log(modifiedItem);
 
+   // useEffect(()=>{
+   //    fetch(`http://localhost:4545/crafts`)
+   //    .then(res=> res.json())
+   //    .then(data=> {
+   //       console.log(data);
+   //    })
 
-   let myUser = items?.filter(value => value.email == user.email)
-   // console.log(myUser);
+   // },[])
+
+
+   let myUser = loadedData?.filter(value => value.email == user.email)
    function handleSort() {
        let sorted=myUser.sort((a,b)=> {
          return a.customization.length-b.customization.length
       })
-
       d(sorted)
-      // console.log(sorted);
-      // setSortCraft(sorted)
-      // setSort('sorted')
-    
    }
+
    function handleSort2() {
        let sorted=myUser.sort((a,b)=> {
          return b.customization.length-a.customization.length
@@ -104,9 +112,7 @@ const MyCraftAndList = () => {
 
       d(sorted)
       console.log(sorted);
-      // setSortCraft(sorted)
-      // setSort('sorted')
-    
+
    }
 
 
@@ -138,6 +144,30 @@ const MyCraftAndList = () => {
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 
             {
+               loadedData.map((value) => {
+                  return <aside key={value._id} className="border-[1px] border-black">
+
+                     <div id="img" className="p-4">
+                        <img className="w-full" src={value?.image} alt="" />
+                     </div>
+
+                     <div id="content" className="p-4">
+                        <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> Item Name: {value?.item_name} </p>
+                        <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" />price: {value?.price} </p>
+                        <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> customization: {value?.customization} </p>
+                        <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> stock status: {value?.stockStatus} </p>
+
+                        <div id="btn-cont" className="flex gap-1">
+                           <Link to={`/update/${value._id}`}><button className="btn btn-accent">Update</button> </Link>
+                           <button onClick={() => handleDelete(value._id)} className="btn btn-secondary">Delete</button>
+                        </div>
+                     </div>
+
+                  </aside>
+               })
+            }
+
+            {/* {
                 c==undefined ?
 
                  myUser.map((value) => {
@@ -184,7 +214,7 @@ const MyCraftAndList = () => {
 
                </aside>
                })
-            }
+            } */}
          </div>
       </div>
    );
