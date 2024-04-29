@@ -43,7 +43,7 @@ const Footer = () => {
               
             </div>
 
-            {/* <div  style={{backgroundImage:`url(https://i.ibb.co/ygCNw92/gettouch.png)`,width:'100%',backgroundRepeat:'no-repeat'}}> */}
+            <div>
               {/* <div className="form-control">
 
 

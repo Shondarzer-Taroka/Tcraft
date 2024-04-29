@@ -69,7 +69,7 @@ const ChallengeArt = () => {
 
                                     <div id="content" className="px-3 pt-1 my-1">
 
-                                        <h3 className="font-semibold text-3xl font-poppins h-[80px]">{value.subcategory_Name}</h3>
+                                        <h3 className="font-semibold md:text-3xl font-poppins md:h-[80px]">{value.subcategory_Name}</h3>
                                         <p className='font-poppins '>{value.short_description.length > 200 ? value.short_description.slice(0, 200) + '...' : value.short_description}</p>
 
                                         <div className='mt-2 flex justify-between py-3'>

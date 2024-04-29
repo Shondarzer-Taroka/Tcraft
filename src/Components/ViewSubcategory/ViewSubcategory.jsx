@@ -34,12 +34,14 @@ const ViewSubcategory = () => {
 
             <section>
 
+                <h1 className="text-center font-bold text-lg my-6">View subcategory details</h1>
+
                 {
                     subdata.map((value=>{
                         return <>
                         <div className="grid lg:grid-cols-3 gap-2 justify-items-start items-center border-[1px]">
-                   <div className="border-b lg:border-r  col-span-1">
-                    <img className="px-2 w-full"  src={value.image} alt="" />
+                   <div className="border-b w-full lg:border-r  col-span-1">
+                    <img className="p-2 w-full"  src={value.image} alt="" />
                     <div>
                     <p className="p-2 font-semibold">{value.subcategory_Name}</p>
                     <p className="p-2"> <span className='font-semibold'>Price: $</span>{value.price} </p>
@@ -47,7 +49,7 @@ const ViewSubcategory = () => {
                     </div>
                 </div>
                 <div className="lg:col-span-2">
-                    <p>{value.short_description} </p>
+                    <p className="pl-2 md:p-2 lg:p-2">{value.short_description} </p>
                 </div>
                 </div>
                         </>

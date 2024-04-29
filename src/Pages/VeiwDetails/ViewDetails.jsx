@@ -67,7 +67,7 @@ const ViewDetails = () => {
                     <div className="grid gap-4 md:grid-cols-2 w-full">
                         <div className="flex items-center border-[1px] border-black rounded-lg w-full p-1">
                             <span>Rating:</span>
-                            <input className=" p-2 w-[100%] outline-none " type="text" name="rating" placeholder="Type your stock status" value={rating} id="" />
+                            <input className=" p-2 w-[100%] outline-none " type="text" name="rating" placeholder="Type your rating" value={rating} id="" />
                         </div>
                         <div className="flex items-center border-[1px] border-black rounded-lg p-1 " >
                             <span>Subcategory Name:</span>
@@ -78,18 +78,18 @@ const ViewDetails = () => {
                     <div className="grid gap-4 md:grid-cols-2 w-full">
                         <div className="flex items-center border-[1px] border-black rounded-lg w-full p-1">
                             <span>Stock-status:</span>
-                            <input className=" p-2 w-[100%] outline-none " type="text" name="stockStatus" placeholder="Type your stock status" id="" />
+                            <input className=" p-2 w-[100%] outline-none " type="text" name="stockStatus" value={stockStatus} placeholder="Type your stock status" id="" />
                         </div>
                         <div className="flex items-center border-[1px] border-black rounded-lg p-1 " >
                             <span>Customization:</span>
                             <input className=" p-2 w-[100%] outline-none " type="text" name="customization" placeholder="Type your Processing time" value={customization} id="" />
                         </div>
                     </div>
-                    <div className="grid gap-4 md:grid-cols-2 w-full">
-                        <div className="flex items-center border-[1px] border-black rounded-lg w-full p-1">
-                            <span>Stock-status:</span>
+                    <div className="grid gap-4 md:grid-cols-1 w-full">
+                        {/* <div className="flex items-center border-[1px] border-black rounded-lg w-full p-1">
+                            <span> </span>
                             <input className=" p-2 w-[100%] outline-none " type="text" name="stockStatus" placeholder="Type your stock status" value={stockStatus} id="" />
-                        </div>
+                        </div> */}
                         <div className="flex items-center border-[1px] border-black rounded-lg p-1 " >
                             <span>Processing time:</span>
                             <input className=" p-2 w-[100%] outline-none " type="text" name="processing_time" value={processing_time} placeholder="Type your Processing time" id="" />
