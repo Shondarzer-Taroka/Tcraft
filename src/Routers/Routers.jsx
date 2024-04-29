@@ -35,12 +35,12 @@ import ViewSubcategory from "../Components/ViewSubcategory/ViewSubcategory";
                 },
                 {
                     path:'/viewdetails/:id',
-                    loader:({params})=> fetch(`http://localhost:4545/crafts/${params.id}`),
+                    loader:({params})=> fetch(`https://assignment-ten-server-orpin.vercel.app/crafts/${params.id}`),
                     element:<Restrict> <ViewDetails></ViewDetails> </Restrict>
                 },
                 {
                     path:'/allcraft',
-                    loader:()=> fetch('http://localhost:4545/crafts'),
+                    loader:()=> fetch('https://assignment-ten-server-orpin.vercel.app/crafts'),
                     element:<AllArtAndCraft></AllArtAndCraft>
                 },
                 {
@@ -49,13 +49,13 @@ import ViewSubcategory from "../Components/ViewSubcategory/ViewSubcategory";
                 },
                 {
                     path:'/mycraft',
-                    loader:()=> fetch(`http://localhost:4545/crafts`),
+                    loader:()=> fetch(`https://assignment-ten-server-orpin.vercel.app/crafts`),
                     element:<Restrict><MyList></MyList></Restrict>
                 },
                 {
                     path:'/update/:id',
                     element:<Restrict><Update></Update></Restrict>,
-                    loader:({params})=> fetch(`http://localhost:4545/crafts/${params.id}`)
+                    loader:({params})=> fetch(`https://assignment-ten-server-orpin.vercel.app/crafts/${params.id}`)
                 },
                 {
                     path:'/viewsub/:subname',

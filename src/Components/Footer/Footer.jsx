@@ -2,16 +2,16 @@ import { FaAddressCard, FaFacebook, FaGithub, FaHome, FaInstagram, FaYoutube } f
 import { PiPhoneCall } from "react-icons/pi";
 import { TfiEmail } from "react-icons/tfi";
 import { Link } from "react-router-dom";
-
+import getInt from '../../assets/gettouch.png'
 const Footer = () => {
     return (
         <div>
-             <section className="bg-[#fd7d45dc]">
+             <section className="bg-[#c1bfbec2]">
         <aside className="p-3">
           <menu className="flex justify-evenly items-center">
-            <div className="w-1/3 h-[5px] bg-white"></div>
-            <div className="text-white font-bold flex items-center"> <span className="font-bold text-black text-2xl">T</span> <small className="text-[rgb(255,254,253)] text-lg">craft</small>  </div>
-            <div className="w-1/3 h-[5px] bg-white"></div>
+            {/* <div className="w-1/3 h-[5px] bg-white"></div> */}
+            <div className="text-white font-bold flex items-end"> <span className="font-bold text-black text-5xl">T</span> <small className="text-[hsl(249,100%,72%)] text-3xl">craft</small>  </div>
+            {/* <div className="w-1/3 h-[5px] bg-white"></div> */}
           </menu>
 
           <menu id="content" className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 py-5 lg:justify-items-center">
@@ -43,15 +43,15 @@ const Footer = () => {
               
             </div>
 
-            <div>
-              <div className="form-control">
+            <div  style={{backgroundImage:`url(https://i.ibb.co/ygCNw92/gettouch.png)`,width:'100%',backgroundRepeat:'no-repeat'}}>
+              {/* <div className="form-control">
 
 
                 <div className="md:flex gap-0 items-center">
                   <input type="email" placeholder="usermail@gmail.com" name="email" className="input input-bordered" />
                   <button className="btn btn-success">subscribe</button>
                 </div>
-              </div>
+              </div> */}
             </div>
 
        

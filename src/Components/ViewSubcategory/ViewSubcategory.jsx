@@ -8,7 +8,7 @@ const ViewSubcategory = () => {
     console.log(subname);
     let [subdata, setSubData] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:4545/viewsub/${subname}`)
+        fetch(`https://assignment-ten-server-orpin.vercel.app/viewsub/${subname}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -37,16 +37,17 @@ const ViewSubcategory = () => {
                 {
                     subdata.map((value=>{
                         return <>
-                        <div className="flex gap-2 items-center border-[1px]">
-                <div className="border-r">
-                    <img className="p-2" src="https://i.ibb.co/brBsfj2/utensile4.jpg" alt="" />
+                        <div className="grid lg:grid-cols-3 gap-2 justify-items-start items-center border-[1px]">
+                   <div className="border-b lg:border-r  col-span-1">
+                    <img className="px-2 w-full"  src={value.image} alt="" />
                     <div>
-                    <p className="p-2"> <span className='font-semibold'>Price: $</span>99 </p>
+                    <p className="p-2 font-semibold">{value.subcategory_Name}</p>
+                    <p className="p-2"> <span className='font-semibold'>Price: $</span>{value.price} </p>
                     <p className='px-2 pb-2 flex items-center gap-1 font-semibold'>Rating:{getRating(value.rating).map(rat => <span key={77 + rat} className='text-yellow-400'> <FaStar></FaStar> </span>)} </p>
                     </div>
                 </div>
-                <div className="">
-                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quasi recusandae ratione, sequi quam eaque saepe, et neque totam adipisci ab? Ut fugiat sed quaerat, eius rem fugit perspiciatis minima. </p>
+                <div className="lg:col-span-2">
+                    <p>{value.short_description} </p>
                 </div>
                 </div>
                         </>

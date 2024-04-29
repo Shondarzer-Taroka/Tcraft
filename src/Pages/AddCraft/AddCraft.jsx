@@ -22,7 +22,7 @@ const AddCraft = () => {
         let craft={short_description,email,user_name,image,item_name,subcategory_Name,price,rating,customization,processing_time,stockStatus}
         console.log(craft);
 
-        fetch('http://localhost:4545/crafts',{
+        fetch('https://assignment-ten-server-orpin.vercel.app/crafts',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -32,7 +32,7 @@ const AddCraft = () => {
         .then(res=> res.json())
         .then(data=>{
             toast.success('successfully added')
-            form.reset()
+            // form.reset()
             console.log(data);
         })
         .catch(er=>{

@@ -15,7 +15,7 @@ const ViewDetails = () => {
   
 
     useEffect(()=>{
-        fetch(`http://localhost:4545/viewdetails/${id}`)
+        fetch(`https://assignment-ten-server-orpin.vercel.app/viewdetails/${id}`)
         .then(res=> res.json())
         .then(data=>{
             // console.log(data);

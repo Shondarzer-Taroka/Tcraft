@@ -8,7 +8,7 @@ const ChallengeArt = () => {
     let [cateData, setCateData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:4545/subcategorydata')
+        fetch('https://assignment-ten-server-orpin.vercel.app/subcategorydata')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -35,6 +35,8 @@ const ChallengeArt = () => {
     // console.log(ratingArray);
     return (
         <div>
+
+            <h1 className='text-center font-bold text-3xl my-7'> Art And Craft Category Section </h1>
 
             <section className="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 

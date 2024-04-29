@@ -6,7 +6,7 @@ const CraftItems = () => {
 
     let [userAddeddata, setUserAddedData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:4545/allcraft')
+        fetch('https://assignment-ten-server-orpin.vercel.app/allcraft')
             .then(res => res.json())
             .then(data => {
                 setUserAddedData(data)

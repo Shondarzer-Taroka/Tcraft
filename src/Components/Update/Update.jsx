@@ -27,7 +27,7 @@ const Update = () => {
         let craft = { image, item_name, subcategory_Name, price, rating, customization, processing_time, stockStatus }
         console.log(craft);
 
-        fetch(`http://localhost:4545/update/${id}`, {
+        fetch(`https://assignment-ten-server-orpin.vercel.app/update/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
