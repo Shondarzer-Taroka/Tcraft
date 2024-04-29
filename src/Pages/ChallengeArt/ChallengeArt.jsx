@@ -1,18 +1,22 @@
 
 import { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
-
+import { Link, ScrollRestoration } from 'react-router-dom';
+import loader from '../../../public/lottieData.json'
+import Lottie from 'lottie-react';
 const ChallengeArt = () => {
 
     let [cateData, setCateData] = useState([])
+    let [craftDataLoading, setcraftDataLoading] = useState([true])
 
     useEffect(() => {
+        setcraftDataLoading(true)
         fetch('https://assignment-ten-server-orpin.vercel.app/subcategorydata')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
                 setCateData(data)
+                setcraftDataLoading(false)
             })
     }, [])
 
@@ -22,7 +26,7 @@ const ChallengeArt = () => {
         for (let i = 0; i < num; i++) {
             ratingArray.push(i)
         }
-        console.log(num);
+        // console.log(num);
         return ratingArray
         //   ratingArray =[]
     }
@@ -36,7 +40,16 @@ const ChallengeArt = () => {
     return (
         <div>
 
+            <ScrollRestoration></ScrollRestoration>
+
             <h1 className='text-center font-bold text-3xl my-7'> Art And Craft Category Section </h1>
+
+            <div className="flex justify-center items-center">
+                {craftDataLoading && <h1 className="w-[70px] ">
+                    <Lottie animationData={loader}>
+                    </Lottie>
+                </h1>}
+            </div>
 
             <section className="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 

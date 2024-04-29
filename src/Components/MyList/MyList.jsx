@@ -75,7 +75,7 @@ const MyList = () => {
 
 
      function handleSortYes() {
-        fetch(`http://localhost:4545/myfilteryes/${user?.email}`)
+        fetch(`https://assignment-ten-server-orpin.vercel.app/myfilteryes/${user?.email}`)
         .then(res=> res.json())
         .then(data=>{
             setItem(data)

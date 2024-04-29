@@ -7,24 +7,9 @@ import '../Style/effect/effect.css'
 const OurProduct = () => {
     return (
         <>
-        {/* <h3>
-  <Typewriter
-    cursor
-    cursorBlinking
-    delaySpeed={1000}
-    deleteSpeed={25}
-    loop={0}
-    typeSpeed={75}
-    words={[
-      'Hello World',
-      'Welcome to',
-      'React Simple Typewriter',
-      'A Simple React Component/Hook for adding a nice Typewriter effect to your project.'
-    ]}
-  />
-</h3> */}
+
         <h1 className='text-center text-4xl font-bold my-7'>Our Wooden Furniture </h1>
-        <section className='grid grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-5 text-white'>
+        <section className='grid grid-cols-1 grid-rows-4 md:grid-rows-2 md:grid-cols-3 gap-5 text-white'>
 
             {/* <div id='bf'>
                 <div id='cf' className='w-full md:w-[570px] h-[350px]  flex flex-col items-center justify-center' style={{ backgroundImage: `url(${img1})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'right' }}>
@@ -63,7 +48,7 @@ const OurProduct = () => {
 
                 </div>
             </div>
-            <div id='bf' className='relative col-span-2'>
+            <div id='bf' className='relative md:col-span-2'>
                 <div id='cf' className='  h-[350px]  flex flex-col items-center justify-center' style={{ backgroundImage: `url(${wood3})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'right' }}>
                 </div>
                 <div id='bgeffect' className='p-7  h-full absolute top-0 z-50 flex items-center' >
