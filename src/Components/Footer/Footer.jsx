@@ -2,7 +2,8 @@ import { FaAddressCard, FaFacebook, FaGithub, FaHome, FaInstagram, FaYoutube } f
 import { PiPhoneCall } from "react-icons/pi";
 import { TfiEmail } from "react-icons/tfi";
 import { Link } from "react-router-dom";
-import getInt from '../../assets/gettouch.png'
+import getInt from '../../../public/fly.json'
+import Lottie from "lottie-react";
 const Footer = () => {
     return (
         <div>
@@ -14,7 +15,7 @@ const Footer = () => {
             {/* <div className="w-1/3 h-[5px] bg-white"></div> */}
           </menu>
 
-          <menu id="content" className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 py-5 lg:justify-items-center">
+          <menu id="content" className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 py-5 lg:justify-items-center items-center">
             <div className="grid grid-cols-2 gap-4">
               <p> <Link className="underline" to={'/'}>Home</Link></p>
               <p> <Link className="underline" to={'/allcraft'}>All art and craft</Link></p>
@@ -44,14 +45,11 @@ const Footer = () => {
             </div>
 
             <div>
-              {/* <div className="form-control">
+              
+              <Lottie className="w-[200px] h-[200px]" animationData={getInt}>
 
+              </Lottie>
 
-                <div className="md:flex gap-0 items-center">
-                  <input type="email" placeholder="usermail@gmail.com" name="email" className="input input-bordered" />
-                  <button className="btn btn-success">subscribe</button>
-                </div>
-              </div> */}
             </div>
 
        

@@ -45,7 +45,7 @@ const Banner = () => {
                             
 
                             
-                            <p className="font-poppins text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium?</p>
+                            <p className="font-poppins text-center"> Where Jute and Wood Converge into Timeless Artistry. Explore our curated selection of handcrafted creations, blending rustic charm with modern elegance.</p>
                             <div className="mt-9">
                                <button className='flex items-center justify-center px-4 btn btn-info font-bold  py-2 rounded-lg gap-1'> <span> Explore</span> 
                                <span className='w-[20px] h-[24px]'> 
@@ -90,7 +90,7 @@ const Banner = () => {
                                 />
                             </h3>
                            
-                            <p className="font-poppins text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium?</p>
+                            <p className="font-poppins text-center"> Where Jute and Wood Converge into Timeless Artistry. Explore our curated selection of handcrafted creations, blending rustic charm with modern elegance.</p>
                             <div className="mt-9">
                                <button className='flex items-center justify-center px-4 btn btn-outline font-bold  py-2 rounded-lg gap-1'> <span> Explore</span> 
                                <span className='w-[20px] h-[24px]'> 
@@ -134,7 +134,7 @@ const Banner = () => {
                                 />
                             </h3>
                            
-                            <p className="font-poppins text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium?</p>
+                            <p className="font-poppins text-center">Where Jute and Wood Converge into Timeless Artistry. Explore our curated selection of handcrafted creations, blending rustic charm with modern elegance.</p>
                             <div className="mt-9">
                                <button className='flex items-center btn btn-secondary justify-center px-4 font-bold text-2xl py-2 rounded-lg gap-1'> <span> Explore</span> 
                                <span className='w-[20px] h-[24px]'> 

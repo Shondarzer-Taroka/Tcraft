@@ -99,7 +99,7 @@ const ViewDetails = () => {
                     <div className="grid gap-4 md:grid-cols-2 w-full">
                         <div className="flex items-center border-[1px] border-black rounded-lg w-full p-1">
                             <span>User Name:</span>
-                            <input className=" p-2 w-[100%] outline-none " type="text" name="user_name" placeholder="Type your stock status" value={user_name} id="" />
+                            <input className=" p-2 w-[100%] outline-none " type="text" name="user_name" placeholder="Type your Name" value={user_name} id="" />
                         </div>
                         <div className="flex items-center border-[1px] border-black rounded-lg p-1 " >
                             <span>Email: </span>
