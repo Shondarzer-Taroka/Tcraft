@@ -15,7 +15,11 @@ const Update = () => {
     // console.log(data);
     function update(e) {
         e.preventDefault()
+
+
+
         let form = e.target
+
         let image = form.image.value
         let item_name = form.item_name.value
         let subcategory_Name = form.subcategory_Name.value
@@ -24,8 +28,22 @@ const Update = () => {
         let customization = form.customization.value
         let processing_time = form.processing_time.value
         let stockStatus = form.stockStatus.value
-        let craft = { image, item_name, subcategory_Name, price, rating, customization, processing_time, stockStatus }
+        let short_description = form.short_description.value
+        let craft = { short_description, image, item_name, subcategory_Name, price, rating, customization, processing_time, stockStatus }
         console.log(craft);
+
+        // let form = e.target
+        // let image = form.image.value
+        // let item_name = form.item_name.value
+        // let subcategory_Name = form.subcategory_Name.value
+        // let price = form.price.value
+        // let rating = form.rating.value
+        // let customization = form.customization.value
+        // let processing_time = form.processing_time.value
+        // let stockStatus = form.stockStatus.value
+        // let craft = { image, item_name, subcategory_Name, price, rating, customization, processing_time, stockStatus }
+        // console.log(craft);
+
 
         fetch(`https://assignment-ten-server-orpin.vercel.app/update/${id}`, {
             method: 'PUT',
@@ -61,14 +79,11 @@ const Update = () => {
                             <input className=" p-2 w-[100%] outline-none " type="text" name="item_name" placeholder="Type your Item Name" id="" />
                         </div>
 
-                        {/* <div className="flex items-center border-[1px] border-black rounded-lg p-1" >
-                        <span>Subcategory:</span>
-                        <input className=" p-2 w-[100%] outline-none " type="text" name="subcategory_Name" placeholder="Type Subcategory" id="" />
-                    </div> */}
+
 
                         <div className="flex items-center gap-3 justify-between border-[1px] border-black rounded-lg p-1" >
                             <span>Subcategory:</span>
-                            {/* <input className=" p-2 w-[100%] outline-none " type="text" name="subcategory_Name" placeholder="Type your Subcategory" id="" /> */}
+
                             <select className="w-full h-full" id="cars" name="subcategory_Name">
                                 <option value="Wooden Furniture & Sculptures">Wooden Furniture & Sculptures</option>
                                 <option value="Wooden Home Decor">Wooden Home Decor</option>
@@ -92,9 +107,17 @@ const Update = () => {
                             <span>Rating:</span>
                             <input className=" p-2 w-[100%] outline-none " type="text" name="rating" placeholder="Type your rating" id="" />
                         </div>
-                        <div className="flex items-center border-[1px] border-black rounded-lg p-1" >
+                        <div className="flex items-center border-[1px] gap-3 border-black rounded-lg p-1" >
                             <span>customization:</span>
-                            <input className=" p-2 w-[100%] outline-none " type="text" name="customization" placeholder="Type your customization" id="" />
+
+                            {/* <input className=" p-2 w-[100%] outline-none " type="text" name="customization" placeholder="Type your customization" id="" /> */}
+
+                            <select className="w-full h-full" id="customization" name="customization">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+
+                            </select>
+
                         </div>
 
                     </article>
@@ -102,9 +125,21 @@ const Update = () => {
 
 
                         <div className="grid gap-4 ">
-                            <div className="flex items-center border-[1px] border-black rounded-lg w-full p-1">
+                            {/* <div className="flex items-center border-[1px] border-black rounded-lg w-full p-1">
                                 <span>Stock-status:</span>
                                 <input className=" p-2 w-[100%] outline-none " type="text" name="stockStatus" placeholder="Type your stock status" id="" />
+                            </div> */}
+                            <div className="flex items-center border-[1px] gap-3 border-black rounded-lg p-1" >
+                                <span>Stock-status:</span>
+
+                                {/* <input className=" p-2 w-[100%] outline-none " type="text" name="stockStatus" placeholder="Type your stockStatus" id="" /> */}
+
+                                <select className="w-full h-full" id="stockStatus" name="stockStatus">
+                                    <option value="In stock">In stock</option>
+                                    <option value="Made to Order">Made to Order</option>
+
+                                </select>
+
                             </div>
                             <div className="flex items-center border-[1px] border-black rounded-lg p-1 " >
                                 <span>Processing time:</span>
@@ -116,13 +151,14 @@ const Update = () => {
                         <div className="flex items-center border-[1px] border-black rounded-lg p-1" >
                             <span> short description:</span>
                             <textarea className="w-full" name="short_description" id="" cols="30" rows="5"></textarea>
-                            {/* <input className=" p-2 w-[100%] outline-none " type="text" name=" short_description" placeholder="Type your  short description" id="" /> */}
+
                         </div>
 
                     </article>
                 </section>
                 <input type="submit" value={'Update'} className="btn btn-primary w-full mt-3" name="" id="" />
             </form>
+
             <ToastContainer></ToastContainer>
         </div>
     );

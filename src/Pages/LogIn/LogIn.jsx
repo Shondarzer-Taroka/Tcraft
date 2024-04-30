@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -6,6 +6,9 @@ import { ToastContainer, toast } from "react-toastify";
 
 const LogIn = () => {
     let {signInUser,signInbyGoogle,signInbyTwitter}=useContext(AuthContext)
+    useEffect(() => {
+      document.querySelector("html").setAttribute("data-theme", 'light');
+    }, []);
     let navigate= useNavigate()
     let loc=useLocation()
     console.log(loc);

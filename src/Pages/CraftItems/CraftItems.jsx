@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Lottie from "lottie-react";
 import hn from '../../../public/lottieData.json'
+import { Fade } from "react-awesome-reveal";
 const CraftItems = () => {
 
     let [userAddeddata, setUserAddedData] = useState([])
@@ -23,7 +24,10 @@ const CraftItems = () => {
     return (
         <div>
 
-            <h1 className="font-poppins font-bold text-3xl text-center my-10">  Craft Items Section </h1>
+            <Fade direction="down">
+               <h1 className="font-poppins font-bold text-3xl text-center my-10">  Craft Items  </h1> 
+            </Fade>
+            
 
             <div className="flex justify-center items-center">
                 {craftDataLoading && <h1 className="w-[70px] ">

@@ -9,17 +9,26 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 import { TiTick } from "react-icons/ti";
 import Swal from "sweetalert2";
+import { FaStar } from "react-icons/fa6";
 
 
 const MyList = () => {
     let { user } = useContext(AuthContext) || {}
     let [item, setItem] = useState([])
     let [toggle, setToggle] = useState(false)
+    let [dataLoading,setDataLoading]=useState(true)
+
+    useEffect(()=>{
+        document.querySelector('html').setAttribute('data-theme','light')
+     },[])
+
     useEffect(() => {
+        setDataLoading(true)
         fetch(`https://assignment-ten-server-orpin.vercel.app/crafts/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
+                setDataLoading(false)
                 // console.log(data);
             })
     }, [user, toggle])
@@ -62,11 +71,13 @@ const MyList = () => {
 
 
      function handleSortNo() {
+        setDataLoading(true)
         fetch(`https://assignment-ten-server-orpin.vercel.app/myfilterno/${user?.email}`)
         .then(res=> res.json())
         .then(data=>{
             // console.log(data);
             setItem(data)
+            setDataLoading(false)
         })
 
 
@@ -75,10 +86,12 @@ const MyList = () => {
 
 
      function handleSortYes() {
+        setDataLoading(true)
         fetch(`https://assignment-ten-server-orpin.vercel.app/myfilteryes/${user?.email}`)
         .then(res=> res.json())
         .then(data=>{
             setItem(data)
+            setDataLoading(false)
             // console.log(data);
         })
         
@@ -87,6 +100,19 @@ const MyList = () => {
 
 
 
+     
+    function getRating(num) {
+        let n= parseInt(num)
+         console.log(n);
+         let t=n>5 ? n=5 :n
+         let ratingArray = []
+         for (let i = 0; i < t; i++) {
+             ratingArray.push(i)
+         }
+         console.log(t);
+         return ratingArray
+         //   ratingArray =[]
+     }
 
     return (
         <div>
@@ -102,6 +128,7 @@ const MyList = () => {
             </div> 
             </div>
 
+            <>{dataLoading ? <div className="flex items-center justify-center"><span className="loading loading-dots loading-lg"></span> </div> :
 
             <div className=" px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 
@@ -115,10 +142,11 @@ const MyList = () => {
                             </div>
 
                             <div id="content" className="p-4">
-                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> Item Name: {value?.item_name} </p>
-                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" />price: {value?.price} </p>
-                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> customization: {value?.customization} </p>
-                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> stock status: {value?.stockStatus} </p>
+                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> <span className="font-semibold">Item Name: </span> {value?.item_name} </p>
+                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" />  <span className="font-semibold">price:</span> {value?.price} </p>
+                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> <span className="font-semibold">customization:</span>  {value?.customization} </p>
+                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" />  <span className="font-semibold">stock status:</span>  {value?.stockStatus} </p>
+                                <p className="flex items-center gap-1"> <TiTick className="text-[hsl(120,85%,69%)]" /> <p className=' pb-2 flex items-center gap-1 font-semibold'> <span className="font-semibold"> Rating:</span>{getRating(value.rating).map(rat => <span key={77 + rat} className='text-yellow-400'> <FaStar></FaStar> </span>)} </p></p>
 
                                 <div id="btn-cont" className="flex gap-1">
                                     <Link to={`/update/${value._id}`}><button className="btn btn-accent">Update</button> </Link>
@@ -133,7 +161,8 @@ const MyList = () => {
                     })
                 }
             </div>
-
+             }
+             </>
         </div>
     );
 };

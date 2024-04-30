@@ -1,25 +1,33 @@
 // import { data } from "autoprefixer";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const ViewDetails = () => {
     let {id}= useParams()
     // let loadedData = useLoaderData()
     // console.log(loadedData);
      let [getViewDetails,setGetViewDtails]=useState([])
-    console.log(id);
+     let {user}=useContext(AuthContext)
+     let [viewLoading,setViewLoading]=useState(true)
+    // console.log(id);
     let { customization, item_name, price, processing_time, rating, stockStatus, subcategory_Name, image, short_description,user_name,email} = getViewDetails
     console.log(getViewDetails);
    
-
+    
+    useEffect(()=>{
+        document.querySelector('html').setAttribute('data-theme','light')
+     },[])
   
 
     useEffect(()=>{
+        setViewLoading(true)
         fetch(`https://assignment-ten-server-orpin.vercel.app/viewdetails/${id}`)
         .then(res=> res.json())
         .then(data=>{
             // console.log(data);
             setGetViewDtails(data)
+            setViewLoading(false)
             // console.log(loadedData);
         })
     },[id])
@@ -37,10 +45,12 @@ const ViewDetails = () => {
     // //     })
     // // },[])
     return (
-        <div>
+    viewLoading?   <div className="flex items-center justify-center"><span className="loading loading-dots loading-lg"></span> </div> :   <div>
+
+            {/* { viewLoading && <div className="flex items-center justify-center"><span className="loading loading-dots loading-lg"></span> </div>} */}
 
  
-   <h1 className="text-center font-bold text-4xl my-7"> View details</h1>
+       <h1 className="text-center font-bold text-4xl my-7"> View details</h1>
 
             <aside className="grid md:grid-cols-2 gap-3 ">
                 <div className="flex flex-col ">
@@ -108,7 +118,13 @@ const ViewDetails = () => {
                     </div>
 
                     <div className="mt-7">
-                        <p className="text-wrap"> <span className="text-lg font-semibold">Short description:</span> {short_description} </p>
+
+                    <div className="flex items-center border-[1px] border-black rounded-lg p-1" >
+                            <span> short description:</span>
+                            <textarea className="w-full"  id="" value={short_description} cols="30" rows="5"></textarea>
+                        {/* <p className="text-wrap"> <span className="text-lg font-semibold">Short description:</span> {short_description} </p> */}
+                            
+                        </div>
                     </div>
 
                     

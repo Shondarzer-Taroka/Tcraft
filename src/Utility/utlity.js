@@ -1,0 +1,3 @@
+
+localStorage.setItem('theme','synthwave')
+

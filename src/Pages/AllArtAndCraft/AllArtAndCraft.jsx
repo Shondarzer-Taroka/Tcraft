@@ -5,6 +5,7 @@ import { data } from 'autoprefixer';
 
 const AllArtAndCraft = () => {
     let loadedData=useLoaderData()
+    // console.log(loadedData);
     // console.log(lod);
     // console.log();
 //   let [loadedData,setLoadedData]=useState([])
@@ -16,9 +17,14 @@ const AllArtAndCraft = () => {
     //     })
     // },[])
 
+    useEffect(()=>{
+        document.querySelector('html').setAttribute('data-theme','light')
+       
+     },[])
+
     return (
         <div className="overflow-x-auto">
-            <table className="table table-zebra">
+            <table className="table table-xs sm:table-sm md:table-md lg:table-lg table-zebra">
                 {/* head */}
                 <thead>
                     <tr>

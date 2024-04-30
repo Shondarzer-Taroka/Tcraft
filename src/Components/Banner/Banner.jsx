@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Keyboard, Navigation, } from 'swiper/modules';
 import { Typewriter } from 'react-simple-typewriter';
-import explo from '../../../public/explore.json'
+import explo from '/public/explore.json'
 import Lottie from 'lottie-react';
 
 const Banner = () => {
@@ -25,7 +25,7 @@ const Banner = () => {
                 <SwiperSlide>
                     <section className="p-16 lg:h-[550px]  rounded flex-col-reverse justify-between items-center flex lg:flex-row gap-2" style={{ background: 'linear-gradient(336deg, rgba(8,82,196,1) 0%, rgba(116,23,5,0.9726015406162465) 41%, rgba(0,0,0,1) 100%)'}}>
                         <div id="content" className=" text-white md:h-[160px] lg:w-[400px] flex flex-col items-center justify-between md:py-3">
-                            <h3 className='font-bold text-3xl md:text-4xl font-poppins text-center'>
+                            <h3 className='font-bold text-3xl md:text-4xl font-poppins text-center mt-4 md:mt-0'>
                                 <Typewriter
                                     cursor
                                     cursorBlinking
@@ -60,7 +60,7 @@ const Banner = () => {
                         <div id="img" className="md:py-3">
 
                             <div className='lg:w-[300px]'>
-                                <img className='rounded-md w-full' src={'https://i.ibb.co/sjwVcst/bl14.jpg'} alt="" />
+                                <img className='rounded-md w-full' src={'https://i.ibb.co/2nRDxhj/bannWood.jpg'} alt="" />
                             </div>
 
 
@@ -72,7 +72,7 @@ const Banner = () => {
                 <SwiperSlide>
                     <section className="p-16 lg:h-[550px]  rounded flex-col-reverse justify-between items-center flex lg:flex-row gap-2" style={{ background: 'linear-gradient(to top, #5ee7df 0%, #b490ca 100%)' }}>
                         <div id="content" className=" text-white lg:h-[200px]  flex flex-col items-center justify-center md:py-3">
-                            <h3 className='font-bold text-3xl md:text-4xl font-poppins text-center'>
+                            <h3 className='font-bold text-3xl md:text-4xl font-poppins text-center mt-4 md:mt-0'>
                                 <Typewriter
                                   cursor
                                   cursorBlinking
@@ -90,7 +90,7 @@ const Banner = () => {
                                 />
                             </h3>
                            
-                            <p className="font-poppins text-center"> Where Jute and Wood Converge into Timeless Artistry. Explore our curated selection of handcrafted creations, blending rustic charm with modern elegance.</p>
+                            <p className="font-poppins text-center">where creativity meets craftsmanship. Explore a diverse collection of artisanal crafts meticulously crafted by talented artisans from around the world.</p>
                             <div className="mt-9">
                                <button className='flex items-center justify-center px-4 btn btn-outline font-bold  py-2 rounded-lg gap-1'> <span> Explore</span> 
                                <span className='w-[20px] h-[24px]'> 
@@ -105,7 +105,7 @@ const Banner = () => {
                         <div id="img" className="md:py-3">
 
                             <div className='lg:w-[300px]'>
-                                <img className='rounded-md w-full' src={'https://i.ibb.co/sjwVcst/bl14.jpg'} alt="" />
+                                <img className='rounded-md w-full' src={'https://i.ibb.co/0y6k98Y/bannj-Utejwe.jpg'} alt="" />
                             </div>
 
 
@@ -116,7 +116,7 @@ const Banner = () => {
                 <SwiperSlide>
                     <section className="p-16 lg:h-[550px]  rounded flex-col-reverse justify-between items-center flex lg:flex-row gap-2" style={{ background: 'linear-gradient(124deg, rgba(18,21,24,0.9277836134453782) 0%, rgba(196,74,8,1) 55%, rgba(66,67,63,1) 95%)' }}>
                         <div id="content" className=" text-white lg:h-[200px]  flex flex-col items-center justify-center md:py-3">
-                            <h3 className='font-bold text-3xl md:text-4xl font-poppins text-center'>
+                            <h3 className='font-bold text-3xl md:text-4xl font-poppins text-center mt-4 md:mt-0'>
                                 <Typewriter
                                   cursor
                                   cursorBlinking
@@ -134,7 +134,7 @@ const Banner = () => {
                                 />
                             </h3>
                            
-                            <p className="font-poppins text-center">Where Jute and Wood Converge into Timeless Artistry. Explore our curated selection of handcrafted creations, blending rustic charm with modern elegance.</p>
+                            <p className="font-poppins text-center">Crafting Natural Harmony. Discover our meticulously crafted jute and wood creations, each piece embodying the perfect balance of eco-conscious design and aesthetic appeal.</p>
                             <div className="mt-9">
                                <button className='flex items-center btn btn-secondary justify-center px-4 font-bold text-2xl py-2 rounded-lg gap-1'> <span> Explore</span> 
                                <span className='w-[20px] h-[24px]'> 
@@ -149,7 +149,7 @@ const Banner = () => {
                         <div id="img" className="md:py-3">
 
                             <div className='lg:w-[300px]'>
-                                <img className='rounded-md w-full' src={'https://i.ibb.co/sjwVcst/bl14.jpg'} alt="" />
+                                <img className='rounded-md w-full' src={'https://i.ibb.co/jL0Rrv5/bannJute.jpg'} alt="" />
                             </div>
 
 

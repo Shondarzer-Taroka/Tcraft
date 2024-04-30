@@ -4,6 +4,7 @@ import { FaStar } from 'react-icons/fa6';
 import { Link, ScrollRestoration } from 'react-router-dom';
 import loader from '../../../public/lottieData.json'
 import Lottie from 'lottie-react';
+import { Fade } from 'react-awesome-reveal';
 const ChallengeArt = () => {
 
     let [cateData, setCateData] = useState([])
@@ -42,7 +43,11 @@ const ChallengeArt = () => {
 
             <ScrollRestoration></ScrollRestoration>
 
-            <h1 className='text-center font-bold text-3xl my-7'> Art And Craft Category Section </h1>
+        <Fade direction='up'> 
+
+            <h1 className='text-center font-bold text-3xl my-7'> Art And Craft Category  </h1>
+        </Fade>
+            
 
             <div className="flex justify-center items-center">
                 {craftDataLoading && <h1 className="w-[70px] ">

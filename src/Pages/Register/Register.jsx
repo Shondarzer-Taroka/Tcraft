@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -6,6 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     let {createUser,updateUser}=useContext(AuthContext)
+
+    useEffect(() => {
+      document.querySelector("html").setAttribute("data-theme", 'light');
+    }, []);
+
     let navigate= useNavigate()
     let loc=useLocation()
     console.log(loc);

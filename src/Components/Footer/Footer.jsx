@@ -2,7 +2,7 @@ import { FaAddressCard, FaFacebook, FaGithub, FaHome, FaInstagram, FaYoutube } f
 import { PiPhoneCall } from "react-icons/pi";
 import { TfiEmail } from "react-icons/tfi";
 import { Link } from "react-router-dom";
-import getInt from '../../../public/fly.json'
+import getInt from '/public/fly.json' 
 import Lottie from "lottie-react";
 const Footer = () => {
     return (
@@ -39,7 +39,7 @@ const Footer = () => {
                  <PiPhoneCall></PiPhoneCall> +88018976867578
                </div>
                <div className="flex items-center gap-2">
-                 <FaHome></FaHome> Nikonjo-1,Dhaka,Bangladesh
+                 <FaHome></FaHome> Nikunja-1,Dhaka,Bangladesh
                </div>
               
             </div>

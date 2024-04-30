@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Banner from "../../Components/Banner/Banner";
 import MyTHeme from "../../Components/MyTHeme/MyTHeme";
 import OurProduct from "../../Components/OurProduct/OurProduct";
@@ -7,8 +8,17 @@ import CraftItems from "../CraftItems/CraftItems";
 
 
 const Home = () => {
+
+    // useEffect(()=>{
+    //   let i=  document.getElementById('navbar')
+    //     console.log(i);
+    //     i.classList.remove('bg-base-100')
+    //     i.classList.add('bg-red-100')
+    // },[])
+
     return (
         <div className="">
+
 
 
             <Banner></Banner>
